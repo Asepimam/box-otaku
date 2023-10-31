@@ -18,7 +18,17 @@ class HomeView extends StatefulWidget {
               Stack(
                 children: [
                   Container(
-                    height: 170.0,
+                    height: 240.0,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(
+                          8.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 200.0,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
@@ -33,22 +43,24 @@ class HomeView extends StatefulWidget {
                     ),
                   ),
                   const Positioned(
-                    top: 10.0,
+                    top: 180,
+                    left:
+                        0, // Untuk mengatur posisi secara horizontal di ujung kiri
+                    right:
+                        0, // Untuk mengatur posisi secara horizontal di ujung kanan
                     child: SearchWigets(),
                   ),
                 ],
               ),
-              Container(
-                padding: const EdgeInsets.all(10.0),
-                child: const Column(
-                  children: [
-                    ListContent(namedList: "New release", namedLink: "See all"),
-                    ListContent(namedList: "Populer", namedLink: "See all"),
-                  ],
-                ),
+              const Column(
+                children: [
+                  ListContent(namedList: "New release", namedLink: "See all"),
+                  ListContent(namedList: "Populer", namedLink: "See all"),
+                ],
               ),
             ],
           ),
+          //
         ),
       ),
     );
